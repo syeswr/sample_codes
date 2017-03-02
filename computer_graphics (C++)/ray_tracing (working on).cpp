@@ -89,9 +89,8 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
     glm::vec3 dirToLightCentroid = glm::normalize(lightCentroid-point);
     
 
-
     // ===========================================
-    // TODO:  ADD SHADOW & SOFT SHADOW LOGIC
+    I AM GOING TO ADD SHADOW & SOFT SHADOW LOGIC HERE
     // ===========================================
 
     float distToLightCentroid = glm::length(lightCentroid-point);
