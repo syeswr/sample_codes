@@ -55,8 +55,6 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
   // otherwise decide what to do based on the material
   Material *m = hit.getMaterial();
   assert (m != NULL);
-
-  // rays coming from the light source are set to white, don't bother to ray trace further.
   if (glm::length(m->getEmittedColor()) > 0.001) {
     return glm::vec3(1,1,1);
   } 
@@ -101,7 +99,6 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
 
     
     // add the lighting contribution from this particular light at this point
-    // (fix this to check for blockers between the light & this surface)
     answer += m->Shade(ray,hit,dirToLightCentroid,myLightColor,args);
   }
       
